@@ -16,7 +16,7 @@
 >  -o OUTPUT, --output OUTPUT
 >                        OUTPUT FILE
 
->  -p POP, --pop POP     specify how many populations you want in the
+>  -p POP, --pop POP     specify how many replicates you want in the
 >                        simulation, must be int
 
 >  -s SIZE, --size SIZE  specify the population size you want in the
