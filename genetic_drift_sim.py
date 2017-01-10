@@ -13,7 +13,7 @@ parser.add_argument("-r","--rep", help="specify how many replicates you want in 
 parser.add_argument("-s","--size", help="specify the population size you want in the simulation, must be int",default=1,type=int)
 parser.add_argument("-f","--freq", help="specify the initial frequency you want in the simulation, must be between 0 and 1",default=0.5,type=float)
 args=parser.parse_args()
-popc=args.pop
+popc=args.rep
 popsize=args.size
 init_freq=args.freq
 logfile=open(args.output.name+".log",'w+')
