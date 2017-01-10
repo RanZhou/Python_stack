@@ -26,7 +26,7 @@
 >                        simulation, must be between 0 and 1
 
  
->Default output files are sim.rst.txt which contains the main result and sim.rst.txt.log that contains the frequency of each generation for each population (need to turn on -v).You can set up your own output name through -o.
+>Default output files are sim.rst.txt which contains the main result and sim.rst.txt.log that contains the frequency of each generation for each population.You can set up your own output name through -o. -v can give you the generation when either a fix or loss event happens in the result file.
 
 >-plt, --plot accepts four options:
 
