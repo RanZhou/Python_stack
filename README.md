@@ -21,7 +21,7 @@
 
 >  -s SIZE, --size SIZE  specify the population size you want in the
 >                        simulation, must be int
-
+###Be careful, the larger your population size is, the longer the program will run according to current setup. Maximum generation is set to 20 times population size.
 >  -f FREQ, --freq FREQ  specify the initial frequency you want in the
 >                        simulation, must be between 0 and 1
 
