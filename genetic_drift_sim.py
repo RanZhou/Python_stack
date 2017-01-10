@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-v","--verbose", help="increase output verbosity",default=False,action="store_true")
 parser.add_argument("-plt","--plot", help="whether output plot and need to specify plot type",choices=['f_vs_t','t_dist','np',"all"],default="np",type=str)
 parser.add_argument("-o","--output", help="OUTPUT FILE",default="sim.rst.txt",type=argparse.FileType('w', 0))
-parser.add_argument("-p","--pop", help="specify how many populations you want in the simulation, must be int",default=1,type=int)
+parser.add_argument("-r","--rep", help="specify how many replicates you want in the simulation, must be int",default=1,type=int)
 parser.add_argument("-s","--size", help="specify the population size you want in the simulation, must be int",default=1,type=int)
 parser.add_argument("-f","--freq", help="specify the initial frequency you want in the simulation, must be between 0 and 1",default=0.5,type=float)
 args=parser.parse_args()
@@ -164,8 +164,15 @@ def mulsim(popc,popsize,init_freq):
 		plt.text(.1, .5,"Initial Allele Frequency:"+str(init_freq),size=12)
 		plt.text(.1, .4,"Fix Event:"+str(count_fix),size=12)
 		plt.text(.1, .3,"Loss Event:"+str(count_loss),size=12)
-		plt.text(.5, .4,"Avg Fix Time:"+str(int(meanf)),size=12)
-		plt.text(.5, .3,"Avg Loss Time:"+str(int(meanl)),size=12)
+		#print "##",meanf,meanl
+		if np.isnan(meanf) :
+			plt.text(.5, .4,"Avg Fix Time: NaN",size=12)
+		else:
+		    plt.text(.5, .4,"Avg Fix Time:"+str(int(meanf)),size=12)
+		if np.isnan(meanl) :
+			plt.text(.5, .3,"Avg Loss Time: NaN",size=12)
+		else:
+			plt.text(.5, .3,"Avg Loss Time:"+str(int(meanl)),size=12)
 		plt.draw()
 		plt.subplot(224)
 		plt.boxplot(new_ar,labels=['fix','loss'],notch =True, vert=False)
@@ -173,4 +180,3 @@ def mulsim(popc,popsize,init_freq):
 		plt.show()
 
 mulsim(popc,popsize,init_freq)
-
