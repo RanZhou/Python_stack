@@ -30,9 +30,9 @@
 
 >-plt, --plot accepts four options:
 
->"f_vs_t will" plot the frequency change over time for the first ten populations.
+>"f_vs_t" will plot the frequency change over time for the first ten populations.
 
->"t_dist will" plot the histogram of the generation time when the allele is fixed or lost in the population. Suggest to use when number of population is greater than 30.
+>"t_dist" will plot the histogram of the generation time when the allele is fixed or lost in the population. Suggest to use when number of population is greater than 30.
 
 >"all" will plot both two plots above. Additionally, you will also have parameters and estimates in left bottom.
 
